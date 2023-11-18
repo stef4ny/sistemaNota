@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestão de Notas 3</title>
+</head>
+<body>
+    <script>
+        let y = true
+        let notas = [];
+        let cont = 0;
+        let maior = 0;
+        let menor = Infinity;
+        let media = 0;
+        
+        while (y) {
+            let nota = parseFloat(prompt("Informe as notas da turma: (uma disciplina)"));
+            if(nota<=0){
+                y=false;
+            }else if(nota >0){
+                if(nota > maior){
+            maior = nota;
+         }
+        if(nota < menor){
+            menor = nota;
+        }
+            notas.push(nota);
+            cont += nota;
+            }
+           
+            }
+        media = cont / notas.length;
+
+        document.write("Media da turma: " + media.toFixed(2) + "<br>");
+        for (let x of notas) {
+            document.write("Notas da Turma:" + x + "<br>");
+        }
+            document.write("A maior nota da turma: " + maior + "<br>");
+            document.write("A menor nota da turma: " + menor + "<br>");
+    </script>
+</body>
+</html>
